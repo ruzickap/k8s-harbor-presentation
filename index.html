@@ -16,7 +16,8 @@
 
         <link rel="stylesheet" href="revealjs/css/reset.css">
         <link rel="stylesheet" href="revealjs/css/reveal.css">
-        <link rel="stylesheet" href="revealjs/css/theme/black.css" id="theme">
+        <link rel="stylesheet" href="revealjs/css/theme/league.css" id="theme">
+        <link rel="stylesheet" href="css/my.css">
 
         <!-- Theme used for syntax highlighting of code -->
         <link rel="stylesheet" href="revealjs/lib/css/monokai.css">
@@ -37,13 +38,42 @@
 
     <body>
         <div class="reveal">
+            <div class="topbar">
+                <img id="logo" src="images/harbor-icon-color.svg">
+            </div>
             <!-- Any section element inside of this container is displayed as a slide -->
             <div class="slides">
-                <section>
-                    <h1>Harbor Presentation</h1>
+                <section data-background-image="images/harbor.gif" data-state="dimbg" data-background-size="1000px">
+                    <h1>Harbor</h1>
+                    <h3>Presentation about Harbor project</h3>
                     <p>
                         <small>Created by <a href="https://petr.ruzicka.dev">Petr Ruzicka</a></small>
                     </p>
+                    <aside class="notes">
+                        <ul>
+                            <li>CTRL + SHIFT + B - <b>disable bookmarks</b></li>
+                            <li>Disable <b>notification</b> in browser for Gmail + Calendar</li>
+                            <li>Stop all <b>IM applications</b></li>
+                            <li>Login to <b>KeePassXC</b></li>
+                            <li>Run the presentation mode using "<b>presentation.sh</b>" command + turn off screensaver / disable redshift</li>
+                            <li>Redirect all the sound to <b>headphones</b></li>
+                            <li>Start <b>terminal</b> and make it half size right and increase the font</li>
+                            <li>Start <b>recording</b> (Headset H390 Analog Mono)</li>
+                            <li><b>Water</b></li>
+                            <li>Turn off <b>mobile phone</b></li>
+                        </ul>
+                    </aside>
+                </section>
+                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="800px">
+                    <h1>What is Harbor?</h1>
+                    <div style="background-color: rgb(0, 46, 92); color: #fff; padding: 20px;">
+                        Cloud native registry able to store container images and helm charts.
+                    </div>
+                </section>
+                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="800px">
+                    <h2>Development cycle</h2>
+                    <img data-src="images/harbor_development_cycle.png">
+                    <small><a href="https://www.slideshare.net/Pivotal/pivotal-container-service-la-nuova-soluzione-per-gestire-kubernetes-in-azienda">https://www.slideshare.net/Pivotal/pivotal-container-service-la-nuova-soluzione-per-gestire-kubernetes-in-azienda</a></small>
                 </section>
             </div>
         </div>
@@ -53,22 +83,18 @@
         <script>
             // More info https://github.com/hakimel/reveal.js#configuration
             Reveal.initialize({
-                controls: true,
-                progress: true,
-                center: true,
                 hash: true,
-
-                transition: 'slide', // none/fade/slide/convex/concave/zoom
 
                 // More info https://github.com/hakimel/reveal.js#dependencies
                 dependencies: [
-                    <!-- { src: 'revealjs/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } }, -->
-                    <!-- { src: 'revealjs/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } }, -->
                     { src: 'revealjs/plugin/highlight/highlight.js', async: true },
                     { src: 'revealjs/plugin/search/search.js', async: true },
                     { src: 'revealjs/plugin/zoom-js/zoom.js', async: true },
                     { src: 'revealjs/plugin/notes/notes.js', async: true }
                 ]
+            });
+            Reveal.configure({
+                slideNumber: 'c/t'
             });
         </script>
     </body>

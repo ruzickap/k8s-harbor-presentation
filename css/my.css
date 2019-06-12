@@ -1,0 +1,36 @@
+/*********************************************
+ * My
+ *********************************************/
+
+html.dimbg .backgrounds {
+    opacity: 0.5 !important;
+}
+
+html.dim .backgrounds {
+    -webkit-filter: blur(7px) saturate(.5) brightness(.8);
+    -moz-filter: blur(7px) saturate(.7) brightness(.9);
+    -o-filter: blur(7px) saturate(.7) brightness(.9);
+    -ms-filter: blur(7px) saturate(.7) brightness(.9);
+    filter: blur(7px) saturate(.7) brightness(.9);
+}
+
+body {
+    background: #003a74;
+    background: -moz-radial-gradient(center, circle cover, #2f475f 0%, #003a74 50%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 50%, color-stop(0%, #2f475f), color-stop(50%, #003a74));
+    background: -webkit-radial-gradient(center, circle cover, #2f475f 0%, #003a74 50%);
+    background: -o-radial-gradient(center, circle cover, #2f475f 0%, #003a74 50%);
+    background: -ms-radial-gradient(center, circle cover, #2f475f 0%, #003a74 50%);
+    background: radial-gradient(center, circle cover, #2f475f 0%, #003a74 50%);
+    background-color: #2b2b2b;
+}
+
+.reveal .topbar {
+    height: 15%;
+}
+
+#logo {
+    margin: 1%;
+    height: 70%;
+    float:  left;
+}
