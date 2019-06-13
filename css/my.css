@@ -2,10 +2,12 @@
  * My
  *********************************************/
 
+/* Dim background image */
 html.dimbg .backgrounds {
     opacity: 0.5 !important;
 }
 
+/* Dim + blur background image */
 html.dim .backgrounds {
     -webkit-filter: blur(7px) saturate(.5) brightness(.8);
     -moz-filter: blur(7px) saturate(.7) brightness(.9);
@@ -14,6 +16,7 @@ html.dim .backgrounds {
     filter: blur(7px) saturate(.7) brightness(.9);
 }
 
+/* Background */
 body {
     background: #003a74;
     background: -moz-radial-gradient(center, circle cover, #2f475f 0%, #003a74 50%);
@@ -25,12 +28,25 @@ body {
     background-color: #2b2b2b;
 }
 
+/* Logo */
 .reveal .topbar {
-    height: 15%;
+    height: 20%;
 }
 
 #logo {
     margin: 1%;
     height: 70%;
     float:  left;
+}
+
+/* Remove  image borders */
+.reveal section img {
+    background:none;
+    border:none;
+    box-shadow:none;
+}
+
+.reveal h2,
+.reveal h3 {
+    text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 20px 20px rgba(0, 0, 0, 0.15);
 }
