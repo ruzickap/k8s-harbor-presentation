@@ -43,7 +43,7 @@
             </div>
             <!-- Any section element inside of this container is displayed as a slide -->
             <div class="slides">
-                <section data-background-image="images/harbor.gif" data-state="dimbg" data-background-size="1000px">
+                <section data-background-image="images/harbor.gif" data-state="dimbg" data-background-size="1100px">
                     <h1>Harbor</h1>
                     <h3>Presentation about Harbor project</h3>
                     <p>
@@ -67,77 +67,135 @@
                         </ul>
                     </aside>
                 </section>
-                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="800px">
+                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="900px">
                     <h1>What is Harbor?</h1>
                     <div style="background-color: rgba(0, 30, 112, 0.8); color: #fff; padding: 20px;">
                         Cloud native registry able to store container images and helm charts.
                     </div>
                 </section>
-                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="800px">
-                    <img data-src="images/harbor_livecycle.png" width="90%">
+                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="900px">
+                    <img data-src="images/harbor_livecycle.png">
                     <small><a href="https://github.com/goharbor/community/tree/master/presentations/introduction">https://github.com/goharbor/community/tree/master/presentations/introduction</a></small>
                 </section>
-                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="800px">
+                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="900px">
                     <h3>Development cycle</h3>
-                    <img data-src="images/harbor_development_cycle.png" width="90%">
+                    <img data-src="images/harbor_development_cycle.png">
                     <small><a href="https://www.slideshare.net/Pivotal/pivotal-container-service-la-nuova-soluzione-per-gestire-kubernetes-in-azienda">https://www.slideshare.net/Pivotal/pivotal-container-service-la-nuova-soluzione-per-gestire-kubernetes-in-azienda</a></small>
                 </section>
-                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="800px">
+                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="900px">
                     <h3>Project history</h3>
-                    <img data-src="images/harbor_history.png" width="70%">
+                    <img data-src="images/harbor_history.png" width="80%">
                     <small><a href="https://github.com/goharbor/community/tree/master/presentations/deep_dive">https://github.com/goharbor/community/tree/master/presentations/deep_dive</a></small>
+                    <aside class="notes">
+                        <ul>
+                            <li>Created by VMware in 2014</li>
+                            <li>Registry for containers and Helm charts</li>
+                            <li>Focus: stores, signs and scans content</li>
+                            <li>Open Source (Apache 2.0)</li>
+                        </ul>
+                    </aside>
                 </section>
-                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="800px">
+                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="900px">
                     <h2>Harbor timeline</h2>
                     <img data-src="images/harbor_timeline.png">
                     <small><a href="https://github.com/goharbor/community/tree/master/presentations/deep_dive">https://github.com/goharbor/community/tree/master/presentations/deep_dive</a></small>
                 </section>
-                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="800px">
+                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="900px">
                     <img data-src="images/harbor_contributors_maintainers.png">
                 </section>
-                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="800px">
+                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="900px">
                     <h2>Harbor Features</h2>
-                    <img data-src="images/harbor_key_features.png" width="80%">
+                    <img data-src="images/harbor_key_features.png">
                     <small><a href="https://github.com/goharbor/community/tree/master/presentations/deep_dive">https://github.com/goharbor/community/tree/master/presentations/deep_dive</a></small>
                 </section>
-                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="800px">
+                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="900px">
                     <h2>Access Control</h2>
-                    <img data-src="images/harbor_access_control.png" width="90%">
+                    <img data-src="images/harbor_access_control.png">
                     <small><a href="https://github.com/goharbor/community/tree/master/presentations/deep_dive">https://github.com/goharbor/community/tree/master/presentations/deep_dive</a></small>
+                    <aside class="notes">
+                        <ul>
+                            <li>Organizations often keep images within their own organizations
+                                <ul>
+                                    <li>Intellectual property stays in organization</li>
+                                </ul>
+                            </li>
+                            <li>People with different roles should have different access
+                                <ul>
+                                    <li>Developer - Read/Write</li>
+                                    <li>QA / QE - Read Only</li>
+                                </ul>
+                            </li>
+                            <li>Different rules should be enforced in different environments
+                                <ul>
+                                    <li>Dev/Test Environment - many people can access</li>
+                                    <li>Production - a limited number of people can access</li>
+                                </ul>
+                            </li>
+                            <li>Can be integrated with internal user management system
+                                <ul>
+                                    <li>OIDC (OpenID Connect) support</li>
+                                    <li>LDAP/Active Directory</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </aside>
                 </section>
-                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="800px">
+                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="900px">
                     <h2>Replication</h2>
-                    <img data-src="images/harbor_replication.png" width="80%">
+                    <img data-src="images/harbor_replication.png">
                     <small><a href="https://github.com/goharbor/community/tree/master/presentations/deep_dive">https://github.com/goharbor/community/tree/master/presentations/deep_dive</a></small>
                 </section>
-                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="800px">
+                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="900px">
                     <h2>Horizontal Scaling</h2>
-                    <img data-src="images/harbor_horizontal_scaling.png" width="65%">
+                    <img data-src="images/harbor_horizontal_scaling.png" width="75%">
                     <small><a href="https://github.com/goharbor/community/tree/master/presentations/deep_dive">https://github.com/goharbor/community/tree/master/presentations/deep_dive</a></small>
+                    <aside class="notes">
+                        <ul>
+                            <li>Container images are usually distributed from a registry</li>
+                            <li>Registry becomes the bottleneck for a large cluster of nodes
+                                <ul>
+                                    <li>I/O</li>
+                                    <li>Network</li>
+                                    <li>Network</li>
+                                </ul>
+                            </li>
+                            <li>Scaling out an registry server
+                                <ul>
+                                    <li>Multiple instances of registry sharing same storage (such as S3 or local Ceph cluster)</li>
+                                    <li>Multiple instances of independent registry sharing no storage</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </aside>
                 </section>
-                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="800px">
+                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="900px">
                     <h2>Global Replication</h2>
-                    <img data-src="images/harbor_global_replication.png" width="90%">
+                    <img data-src="images/harbor_global_replication.png">
                     <small><a href="https://github.com/goharbor/community/tree/master/presentations/deep_dive">https://github.com/goharbor/community/tree/master/presentations/deep_dive</a></small>
                 </section>
-                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="800px">
+                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="900px">
                     <h2>Vulnerability Scanning</h2>
-                    <img data-src="images/harbor_vulnerability_scanning.png" width="90%">
+                    <img data-src="images/harbor_vulnerability_scanning.png">
                     <small><a href="https://github.com/goharbor/community/tree/master/presentations/deep_dive">https://github.com/goharbor/community/tree/master/presentations/deep_dive</a></small>
                 </section>
-                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="800px">
+                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="900px">
                     <h2>Image signing</h2>
-                    <img data-src="images/harbor_image_signing.png" width="70%">
+                    <img data-src="images/harbor_image_signing.png" width="80%">
                     <small><a href="https://github.com/goharbor/community/tree/master/presentations/deep_dive">https://github.com/goharbor/community/tree/master/presentations/deep_dive</a></small>
                 </section>
-                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="800px">
+                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="900px">
                     <h2>Harbor architecture</h2>
                     <img data-src="images/harbor_architecture.png">
                     <small><a href="https://github.com/goharbor/community/tree/master/presentations/deep_dive">https://github.com/goharbor/community/tree/master/presentations/deep_dive</a></small>
                 </section>
-                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="800px">
-                    <h2>Demo</h2>
-                    <div style="background-color: rgba(0, 30, 112, 0.8); color: #fff; padding: 20px;">
+                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="900px">
+                    <h3>Harbor Helm Chart k8s installation</h3>
+                    <img data-src="images/harbor_helm_chart_k8s_installation.png" width="80%">
+                    <small><a href="https://github.com/goharbor/community/tree/master/presentations/deep_dive">https://github.com/goharbor/community/tree/master/presentations/deep_dive</a></small>
+                </section>
+                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="900px">
+                    <h1>Demo</h1>
+                    <div style="background-color: rgba(0, 30, 112, 0.8); color: #fff; padding: 20px; font-size:90%;">
                         <ul>
                             <li>
                                 Presentation git repository:<br/>
@@ -158,7 +216,13 @@
                         </ul>
                     </div>
                 </section>
-                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="800px">
+                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="900px">
+                    <h3>Demo Architecture</h3>
+                    <div style="background-color: rgba(98, 114, 255, 0.8); color: #fff; padding: 20px;">
+                        <img data-src="images/harbor_demo_architecture_diagram.svg" width="95%">
+                    </div>
+                </section>
+                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="900px">
                     <h2>Future plans for Harbor 1.9 (Spetember)</h2>
                     <div style="background-color: rgba(0, 30, 112, 0.8); color: #fff; padding: 20px;">
                         <ul>
@@ -177,7 +241,7 @@
                         </ul>
                     </div>
                 </section>
-                <section data-background-image="images/harbor.gif" data-state="dimbg" data-background-size="1000px">
+                <section data-background-image="images/harbor.gif" data-state="dimbg" data-background-size="1100px">
                     <h1>Thank you</h1>
                     <aside class="notes">
                         <ul>
@@ -198,11 +262,10 @@
             // More info https://github.com/hakimel/reveal.js#configuration
             Reveal.initialize({
                 hash: true,
-                width: 1200,
+                width: 1100,
 
                 // More info https://github.com/hakimel/reveal.js#dependencies
                 dependencies: [
-                    { src: 'revealjs/plugin/highlight/highlight.js', async: true },
                     { src: 'revealjs/plugin/search/search.js', async: true },
                     { src: 'revealjs/plugin/zoom-js/zoom.js', async: true },
                     { src: 'revealjs/plugin/notes/notes.js', async: true }
