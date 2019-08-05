@@ -29,3 +29,11 @@ cp revealjs/{package*,gruntfile.js} .
 npm install
 npm start
 ```
+
+## Print
+
+If you want to generate PDF from the slides, you can use this command:
+
+```bash
+docker run --rm -t -v `pwd`:/slides astefanutti/decktape --size 1754x1240 https://ruzickap.github.io/k8s-harbor-presentation slides-1754x1240.pdf
+```
