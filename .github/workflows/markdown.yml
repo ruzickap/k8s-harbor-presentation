@@ -8,6 +8,8 @@ on:
       - "**.md"
       - .markdownlint.yml
   push:
+    branches:
+      - master
     paths:
       - .github/workflows/markdown.yml
       - "**.md"
