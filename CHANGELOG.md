@@ -1,9 +1,16 @@
 # Changelog
 
+## [v1.0.2](https://github.com/ruzickap/k8s-harbor-presentation/compare/v1.0.1...v1.0.2) (2020-09-17)
+
+- Add actions/checkout with gh-page to periodic-broken-link-checks.yml [`#19`](https://github.com/ruzickap/k8s-harbor-presentation/pull/19)
+- Replace markdown link checker by action-my-markdown-link-checker [`#18`](https://github.com/ruzickap/k8s-harbor-presentation/pull/18)
+- Replace markdown linter [`#17`](https://github.com/ruzickap/k8s-harbor-presentation/pull/17)
+- Revert "Bump revealjs from `00b0ace` to `5e49cbd`" [`#13`](https://github.com/ruzickap/k8s-harbor-presentation/pull/13)
+- CHANGELOG file update [`#11`](https://github.com/ruzickap/k8s-harbor-presentation/pull/11)
+
 ## [v1.0.1](https://github.com/ruzickap/k8s-harbor-presentation/compare/v1.0.0...v1.0.1) (2020-05-11)
 
 - Ignore CHANGELOG.md when doing markdown checks [`876f3b8`](https://github.com/ruzickap/k8s-harbor-presentation/commit/876f3b8675a921d0ba39ed9f17127782d594b055)
-- Improve dependabot by adding default_labels "dependencies" [`3aeaef4`](https://github.com/ruzickap/k8s-harbor-presentation/commit/3aeaef40eb2be0452068a3918359e6968b4d13ac)
 - Add .release-it.yml to .gitignore [`3d9a8e5`](https://github.com/ruzickap/k8s-harbor-presentation/commit/3d9a8e501c020d870e6a68fd1fdfe53ca5004a4c)
 - Update ubuntu from ubuntu-18.04 -&gt; ubuntu-latest [`b45468a`](https://github.com/ruzickap/k8s-harbor-presentation/commit/b45468a6674a3464e212c898854b817d97f70cdd)
 - Update github-action-markdown-link-check to version v1 [`7d2c6e6`](https://github.com/ruzickap/k8s-harbor-presentation/commit/7d2c6e6002d9ab68ccb947635452a95e526fc9be)
@@ -18,16 +25,22 @@
 - Aadd GitHub Actions [`a5ba7a5`](https://github.com/ruzickap/k8s-harbor-presentation/commit/a5ba7a54ee7a3e3e6197a41031e49a35f22496e3)
 - Adding "Automerged updates" by Dependabot [`0f2c86d`](https://github.com/ruzickap/k8s-harbor-presentation/commit/0f2c86d495c9dccc2cd3fba11a74249483208782)
 
-## v1.0.0 (2019-11-01)
+## [v1.0.0](https://github.com/ruzickap/k8s-harbor-presentation/compare/v0.0.2...v1.0.0) (2019-11-01)
 
 - Remove "Installation" from Agenda slide [`171c131`](https://github.com/ruzickap/k8s-harbor-presentation/commit/171c1315622fae9f7e2f8420a0187eb213bafd6b)
 - Disable "Future plans for Harbor 1.9" slide [`5a7c715`](https://github.com/ruzickap/k8s-harbor-presentation/commit/5a7c715fdf7450f519faa4d26984a3cc203b6657)
 - Added "Print" section into README [`d5e0ce6`](https://github.com/ruzickap/k8s-harbor-presentation/commit/d5e0ce67e057ca77a574375d77e8b0ad36cb10ac)
+
+## [v0.0.2](https://github.com/ruzickap/k8s-harbor-presentation/compare/v0.0.1...v0.0.2) (2019-07-23)
+
 - Move "Harbor - livecycle" slide behind Agenda [`abb7735`](https://github.com/ruzickap/k8s-harbor-presentation/commit/abb77359047f03437c266cd09e0146ca342f6695)
 - Fix HTML attributes data-src -&gt; src and adding alt attributes [`c5f4360`](https://github.com/ruzickap/k8s-harbor-presentation/commit/c5f4360d64c1045dbc09ac53b2a4b45b38f41409)
 - Adding Agenda slide [`09404f2`](https://github.com/ruzickap/k8s-harbor-presentation/commit/09404f2e6081f1227d921fd257b037a6b64ffa1a)
 - Harbor demo architecture changed - external PostgreSQL removed [`745265a`](https://github.com/ruzickap/k8s-harbor-presentation/commit/745265ac4b6a18e02653a6f89e6fe4d1ef75a4a1)
 - Adding links to last (Thank you) slide [`752b666`](https://github.com/ruzickap/k8s-harbor-presentation/commit/752b6665f66c6af7cef4e8aa30be6347f086eedb)
+
+## v0.0.1 (2019-06-25)
+
 - Add new architecture diagram with one harbor instance [`d80ad8c`](https://github.com/ruzickap/k8s-harbor-presentation/commit/d80ad8c5304e2079dec158db92027bd121a41275)
 - Fix "Docker Hub" -&gt; "Docker Registry" [`d2925e3`](https://github.com/ruzickap/k8s-harbor-presentation/commit/d2925e3c0265dbe35748bc355f145ff73d948eea)
 - Image link changed, webhook feature added [`1f3e9b4`](https://github.com/ruzickap/k8s-harbor-presentation/commit/1f3e9b41c3dcb6a2a4542562e218751d21d8660e)
@@ -38,7 +51,6 @@
 - Adding few more slides, changing size of slides, adding notes [`abf4a07`](https://github.com/ruzickap/k8s-harbor-presentation/commit/abf4a075f998080282e1fc8842ddbe9aa93660bf)
 - Adding more slides + css improvements [`f3cb05d`](https://github.com/ruzickap/k8s-harbor-presentation/commit/f3cb05dda61fe91384dd8f5af232fbf60ad95d3f)
 - Adding gruntfile.js to use 'npm start' easily [`1fb52cf`](https://github.com/ruzickap/k8s-harbor-presentation/commit/1fb52cfaf0ee251bc38fe8e8c00dbaf8a9aa5963)
-- Adding dependabot config [`a423c66`](https://github.com/ruzickap/k8s-harbor-presentation/commit/a423c66689cab9bbe3164301d98947147d7ee6f0)
 - Adding nodejs files [`847d686`](https://github.com/ruzickap/k8s-harbor-presentation/commit/847d6864fed60181f929d830844ab95193567470)
 - .gitignore added for nodejs [`db90cc3`](https://github.com/ruzickap/k8s-harbor-presentation/commit/db90cc397767885c3f07c8b3edd89e70f65629a1)
 - Adding new slides [`337093b`](https://github.com/ruzickap/k8s-harbor-presentation/commit/337093b22720c64151789aa0cb085490cc9110c3)
