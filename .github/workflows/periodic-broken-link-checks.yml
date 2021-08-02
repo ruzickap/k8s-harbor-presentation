@@ -22,6 +22,12 @@ jobs:
           EXCLUDE: |
             mylabs.dev
         run: |
-          export INPUT_URL="https://${GITHUB_REPOSITORY%/*}.github.io/${GITHUB_REPOSITORY##*/}"
-          export INPUT_CMD_PARAMS="--verbose --buffer-size=8192 --max-connections=10 --color=always --exclude=($( echo ${EXCLUDE} | tr ' ' '|' ))"
+          if [ -s CNAME ]; then
+            INPUT_URL="https://$(cat CNAME)"
+          else
+            INPUT_URL="https://${GITHUB_REPOSITORY%/*}.github.io/${GITHUB_REPOSITORY##*/}"
+          fi
+          export INPUT_URL
+          INPUT_CMD_PARAMS="--buffer-size=8192 --max-connections=10 --color=always --exclude=($( echo "${EXCLUDE}" | tr '\n' '|' ))"
+          export INPUT_CMD_PARAMS
           wget -qO- https://raw.githubusercontent.com/ruzickap/action-my-broken-link-checker/v2/entrypoint.sh | bash
