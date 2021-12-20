@@ -1,12 +1,19 @@
 # Changelog
 
+## [v1.0.3](https://github.com/ruzickap/k8s-harbor-presentation/compare/v1.0.2...v1.0.3) (2021-12-20)
+
+- Improve GH Action files [`#25`](https://github.com/ruzickap/k8s-harbor-presentation/pull/25)
+- Fix linter issues [`#24`](https://github.com/ruzickap/k8s-harbor-presentation/pull/24)
+- Upgrade GH Actions versions [`#23`](https://github.com/ruzickap/k8s-harbor-presentation/pull/23)
+- Upgrade action-my-broken-link-checker [`#22`](https://github.com/ruzickap/k8s-harbor-presentation/pull/22)
+- Fix My Broken Link Checker parameter [`#21`](https://github.com/ruzickap/k8s-harbor-presentation/pull/21)
+
 ## [v1.0.2](https://github.com/ruzickap/k8s-harbor-presentation/compare/v1.0.1...v1.0.2) (2020-09-17)
 
 - Add actions/checkout with gh-page to periodic-broken-link-checks.yml [`#19`](https://github.com/ruzickap/k8s-harbor-presentation/pull/19)
 - Replace markdown link checker by action-my-markdown-link-checker [`#18`](https://github.com/ruzickap/k8s-harbor-presentation/pull/18)
 - Replace markdown linter [`#17`](https://github.com/ruzickap/k8s-harbor-presentation/pull/17)
 - Revert "Bump revealjs from `00b0ace` to `5e49cbd`" [`#13`](https://github.com/ruzickap/k8s-harbor-presentation/pull/13)
-- CHANGELOG file update [`#11`](https://github.com/ruzickap/k8s-harbor-presentation/pull/11)
 
 ## [v1.0.1](https://github.com/ruzickap/k8s-harbor-presentation/compare/v1.0.0...v1.0.1) (2020-05-11)
 
