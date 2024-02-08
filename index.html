@@ -1,314 +1,556 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
 
-    <head>
-        <meta charset="utf-8">
+    <title>Harbor Presentation</title>
 
-        <title>Harbor Presentation</title>
+    <meta name="description" content="Presentation about Harbor project" />
+    <meta name="author" content="Petr Ruzicka" />
 
-        <meta name="description" content="Presentation about Harbor project">
-        <meta name="author" content="Petr Ruzicka">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
 
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="revealjs/css/reset.css" />
+    <link rel="stylesheet" href="revealjs/css/reveal.css" />
+    <link rel="stylesheet" href="revealjs/css/theme/league.css" id="theme" />
+    <link rel="stylesheet" href="css/my.css" />
 
-        <link rel="stylesheet" href="revealjs/css/reset.css">
-        <link rel="stylesheet" href="revealjs/css/reveal.css">
-        <link rel="stylesheet" href="revealjs/css/theme/league.css" id="theme">
-        <link rel="stylesheet" href="css/my.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="revealjs/lib/css/monokai.css" />
 
-        <!-- Theme used for syntax highlighting of code -->
-        <link rel="stylesheet" href="revealjs/lib/css/monokai.css">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.type = "text/css";
+      link.href = window.location.search.match(/print-pdf/gi)
+        ? "revealjs/css/print/pdf.css"
+        : "revealjs/css/print/paper.css";
+      document.getElementsByTagName("head")[0].appendChild(link);
+    </script>
 
-        <!-- Printing and PDF exports -->
-        <script>
-            var link = document.createElement( 'link' );
-            link.rel = 'stylesheet';
-            link.type = 'text/css';
-            link.href = window.location.search.match( /print-pdf/gi ) ? 'revealjs/css/print/pdf.css' : 'revealjs/css/print/paper.css';
-            document.getElementsByTagName( 'head' )[0].appendChild( link );
-        </script>
+    <!--[if lt IE 9]>
+      <script src="revealjs/lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
 
-        <!--[if lt IE 9]>
-        <script src="revealjs/lib/js/html5shiv.js"></script>
-        <![endif]-->
-    </head>
-
-    <body>
-        <div class="reveal">
-            <div class="topbar">
-                <img id="logo" src="images/harbor-stacked-color.svg" alt="Harbor logo">
-            </div>
-            <!-- Any section element inside of this container is displayed as a slide -->
-            <div class="slides">
-                <section data-background-image="images/harbor.gif" data-state="dimbg" data-background-size="1200px">
-                    <h1>Harbor</h1>
-                    <h3>Presentation about Harbor project</h3>
-                    <p>
-                        <small><a href="https://ruzickap.github.io/k8s-harbor-presentation">https://ruzickap.github.io/k8s-harbor-presentation</a></small>
-                    </p>
-                    <p>
-                        <small>Created by <a href="https://petr.ruzicka.dev">Petr Ruzicka</a></small>
-                    </p>
-                    <aside class="notes">
-                        <ul>
-                            <li>CTRL + SHIFT + B - <b>disable bookmarks</b></li>
-                            <li>Disable <b>notification</b> in browser for Gmail + Calendar</li>
-                            <li>Stop all <b>IM applications</b></li>
-                            <li>Login to <b>KeePassXC</b></li>
-                            <li>Run the presentation mode using "<b>presentation.sh</b>" command + turn off screensaver / disable redshift</li>
-                            <li>Redirect all the sound to <b>headphones</b></li>
-                            <li>Start <b>terminal</b> and make it half size right and increase the font</li>
-                            <li>Start <b>recording</b> (Headset H390 Analog Mono)</li>
-                            <li><b>Water</b></li>
-                            <li>Turn off <b>mobile phone</b></li>
-                        </ul>
-                    </aside>
-                </section>
-                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="900px">
-                    <h2>Agenda</h2>
-                    <div style="background-color: rgba(0, 30, 112, 0.8); color: #fff; padding: 20px;">
-                        <ul>
-                            <li>
-                                Project introduction, history, development
-                            </li>
-                            <li>
-                                Features - RBAC, replication, vulnerability scanning, security
-                            </li>
-                            <li>
-                                Architecture
-                            </li>
-                        </ul>
-                    </div>
-                    <div style="background-color: rgba(0, 25, 167, 0.9); color: #fff; padding: 20px;">
-                        <ul>
-                            <li>
-                                Helm charts operations
-                            </li>
-                            <li>
-                                Container images (replication, vulnerability scan, security)
-                            </li>
-                            <li>
-                                Project settings
-                            </li>
-                        </ul>
-                    </div>
-                </section>
-                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="900px">
-                    <h1>What is Harbor?</h1>
-                    <div style="background-color: rgba(0, 30, 112, 0.8); color: #fff; padding: 20px;">
-                        Cloud native registry able to store container images and Helm Charts
-                    </div>
-                </section>
-                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="900px">
-                    <img src="images/harbor_livecycle.png" alt="Harbor - livecycle">
-                    <small><a href="https://github.com/goharbor/community/tree/master/presentations/introduction">https://github.com/goharbor/community/tree/master/presentations/introduction</a></small>
-                </section>
-                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="900px">
-                    <h2>Container registries</h2>
-                    <div style="background-color: rgba(0, 30, 112, 0.8); color: #fff; padding: 20px;">
-                        <ul>
-                            <li>
-                                Docker Hub
-                            </li>
-                            <li>
-                                Quay
-                            </li>
-                            <li>
-                                GitHub Package Registry
-                            </li>
-                            <li>
-                                GitLab
-                            </li>
-                            <li>
-                                Azure Container Registry
-                            </li>
-                            <li>
-                                Google Container Registry (GCR)
-                            </li>
-                            <li>
-                                Amazon Elastic Container Registry (ECR)
-                            </li>
-                            <li>
-                                TreeScale
-                            </li>
-                            <li>
-                                Canister
-                            </li>
-                        </ul>
-                    </div>
-                </section>
-                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="900px">
-                    <h2>Self-hosted container registries</h2>
-                    <div style="background-color: rgba(0, 30, 112, 0.8); color: #fff; padding: 20px;">
-                        <ul>
-                            <li>
-                                Docker Registry
-                            </li>
-                            <li>
-                                GitLab Container Registry
-                            </li>
-                            <li>
-                                Harbor
-                            </li>
-                            <li>
-                                Portus
-                            </li>
-                            <li>
-                                JFrog Artifactory
-                            </li>
-                        </ul>
-                    </div>
-                </section>
-                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="900px">
-                    <h3>Development cycle</h3>
-                    <img src="images/harbor_development_cycle.png" alt="Harbor - development cycle">
-                    <small><a href="https://cloud.vmware.com/community/2017/12/06/deploy-enterprise-grade-kubernetes-vmware-pivotal-container-service-pks/">https://cloud.vmware.com/community/2017/12/06/deploy-enterprise-grade-kubernetes-vmware-pivotal-container-service-pks/</a></small>
-                </section>
-                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="900px">
-                    <h3>Project history</h3>
-                    <img src="images/harbor_history.png" width="80%" alt="Harbor - history">
-                    <small><a href="https://github.com/goharbor/community/tree/master/presentations/deep_dive">https://github.com/goharbor/community/tree/master/presentations/deep_dive</a></small>
-                    <aside class="notes">
-                        <ul>
-                            <li>Created by VMware in 2014</li>
-                            <li>Registry for containers and Helm Charts</li>
-                            <li>Focus: stores, signs and scans content</li>
-                            <li>Open Source (Apache 2.0)</li>
-                        </ul>
-                    </aside>
-                </section>
-                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="900px">
-                    <h2>Harbor timeline</h2>
-                    <img src="images/harbor_timeline.png" alt="Harbor - timeline">
-                    <small><a href="https://github.com/goharbor/community/tree/master/presentations/deep_dive">https://github.com/goharbor/community/tree/master/presentations/deep_dive</a></small>
-                </section>
-                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="900px">
-                    <img src="images/harbor_contributors_maintainers.png" alt="Harbor - contributors and maintainers">
-                    <small><a href="https://github.com/goharbor/community/tree/master/presentations/deep_dive">https://github.com/goharbor/community/tree/master/presentations/deep_dive</a></small>
-                </section>
-                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="900px">
-                    <h2>Harbor Features</h2>
-                    <img src="images/harbor_key_features.png" alt="Harbor - key features">
-                    <small><a href="https://github.com/goharbor/community/tree/master/presentations/deep_dive">https://github.com/goharbor/community/tree/master/presentations/deep_dive</a></small>
-                </section>
-                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="900px">
-                    <h2>Access Control</h2>
-                    <img src="images/harbor_access_control.png" alt="Harbor - access control">
-                    <small><a href="https://github.com/goharbor/community/tree/master/presentations/deep_dive">https://github.com/goharbor/community/tree/master/presentations/deep_dive</a></small>
-                    <aside class="notes">
-                        <ul>
-                            <li>Organizations often keep images within their own organizations
-                                <ul>
-                                    <li>Intellectual property stays in organization</li>
-                                </ul>
-                            </li>
-                            <li>People with different roles should have different access
-                                <ul>
-                                    <li>Developer - Read/Write</li>
-                                    <li>QA / QE - Read Only</li>
-                                </ul>
-                            </li>
-                            <li>Different rules should be enforced in different environments
-                                <ul>
-                                    <li>Dev/Test Environment - many people can access</li>
-                                    <li>Production - a limited number of people can access</li>
-                                </ul>
-                            </li>
-                            <li>Can be integrated with internal user management system
-                                <ul>
-                                    <li>OIDC (OpenID Connect) support</li>
-                                    <li>LDAP/Active Directory</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </aside>
-                </section>
-                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="900px">
-                    <h2>Replication</h2>
-                    <img src="images/harbor_replication.png" alt="Harbor - replication">
-                    <small><a href="https://github.com/goharbor/community/tree/master/presentations/deep_dive">https://github.com/goharbor/community/tree/master/presentations/deep_dive</a></small>
-                </section>
-                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="900px">
-                    <h2>Horizontal Scaling</h2>
-                    <img src="images/harbor_horizontal_scaling.png" width="75%" alt="Harbor - horizontal scaling">
-                    <small><a href="https://github.com/goharbor/community/tree/master/presentations/deep_dive">https://github.com/goharbor/community/tree/master/presentations/deep_dive</a></small>
-                    <aside class="notes">
-                        <ul>
-                            <li>Container images are usually distributed from a registry</li>
-                            <li>Registry becomes the bottleneck for a large cluster of nodes
-                                <ul>
-                                    <li>I/O</li>
-                                    <li>Network</li>
-                                    <li>Network</li>
-                                </ul>
-                            </li>
-                            <li>Scaling out an registry server
-                                <ul>
-                                    <li>Multiple instances of registry sharing same storage (such as S3 or local Ceph cluster)</li>
-                                    <li>Multiple instances of independent registry sharing no storage</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </aside>
-                </section>
-                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="900px">
-                    <h2>Global Replication</h2>
-                    <img src="images/harbor_global_replication.png" alt="Harbor - global replication">
-                    <small><a href="https://github.com/goharbor/community/tree/master/presentations/deep_dive">https://github.com/goharbor/community/tree/master/presentations/deep_dive</a></small>
-                </section>
-                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="900px">
-                    <h2>Vulnerability Scanning</h2>
-                    <img src="images/harbor_vulnerability_scanning.png" alt="Harbor - vulnerability scanning">
-                    <small><a href="https://github.com/goharbor/community/tree/master/presentations/deep_dive">https://github.com/goharbor/community/tree/master/presentations/deep_dive</a></small>
-                </section>
-                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="900px">
-                    <h2>Image signing</h2>
-                    <img src="images/harbor_image_signing.png" width="80%" alt="Harbor - image signing">
-                    <small><a href="https://github.com/goharbor/community/tree/master/presentations/deep_dive">https://github.com/goharbor/community/tree/master/presentations/deep_dive</a></small>
-                </section>
-                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="900px">
-                    <h2>Harbor architecture</h2>
-                    <img src="images/harbor_architecture.png" alt="Harbor architecture">
-                    <small><a href="https://github.com/goharbor/community/tree/master/presentations/deep_dive">https://github.com/goharbor/community/tree/master/presentations/deep_dive</a></small>
-                </section>
-                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="900px">
-                    <h3>Harbor Helm Chart k8s installation</h3>
-                    <img src="images/harbor_helm_chart_k8s_installation.png" width="80%" alt="Harbor - helm chart k8s installation">
-                    <small><a href="https://github.com/goharbor/community/tree/master/presentations/deep_dive">https://github.com/goharbor/community/tree/master/presentations/deep_dive</a></small>
-                </section>
-                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="900px">
-                    <h1>Demo</h1>
-                    <div style="background-color: rgba(0, 30, 112, 0.8); color: #fff; padding: 20px; font-size:90%;">
-                        <ul>
-                            <li>
-                                Presentation git repository:<br/>
-                                <a href="https://github.com/ruzickap/k8s-harbor-presentation">https://github.com/ruzickap/k8s-harbor-presentation</a>
-                            </li>
-                            <li>
-                                Presentation URL:<br/>
-                                <a href="https://ruzickap.github.io/k8s-harbor-presentation">https://ruzickap.github.io/k8s-harbor-presentation</a>
-                            </li>
-                            <li>
-                                Demo Git repository:<br/>
-                                <a href="https://github.com/ruzickap/k8s-harbor">https://github.com/ruzickap/k8s-harbor</a>
-                            </li>
-                            <li>
-                                Demo web pages:<br/>
-                                <a href="https://ruzickap.github.io/k8s-harbor/">https://ruzickap.github.io/k8s-harbor</a>
-                            </li>
-                        </ul>
-                    </div>
-                </section>
-                <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="900px">
-                    <h3>Demo Architecture</h3>
-                    <div style="background-color: rgba(98, 114, 255, 0.8); color: #fff; padding: 20px;">
-                        <img src="images/harbor_demo_architecture_diagram.svg" width="90%" alt="Harbor - demo architecture diagram">
-                    </div>
-                </section>
-                <!-- <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="900px">
+  <body>
+    <div class="reveal">
+      <div class="topbar">
+        <img
+          id="logo"
+          src="images/harbor-stacked-color.svg"
+          alt="Harbor logo"
+        />
+      </div>
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section
+          data-background-image="images/harbor.gif"
+          data-state="dimbg"
+          data-background-size="1200px"
+        >
+          <h1>Harbor</h1>
+          <h3>Presentation about Harbor project</h3>
+          <p>
+            <small
+              ><a href="https://ruzickap.github.io/k8s-harbor-presentation"
+                >https://ruzickap.github.io/k8s-harbor-presentation</a
+              ></small
+            >
+          </p>
+          <p>
+            <small
+              >Created by
+              <a href="https://petr.ruzicka.dev">Petr Ruzicka</a></small
+            >
+          </p>
+          <aside class="notes">
+            <ul>
+              <li>CTRL + SHIFT + B - <b>disable bookmarks</b></li>
+              <li>
+                Disable <b>notification</b> in browser for Gmail + Calendar
+              </li>
+              <li>Stop all <b>IM applications</b></li>
+              <li>Login to <b>KeePassXC</b></li>
+              <li>
+                Run the presentation mode using "<b>presentation.sh</b>" command
+                + turn off screensaver / disable redshift
+              </li>
+              <li>Redirect all the sound to <b>headphones</b></li>
+              <li>
+                Start <b>terminal</b> and make it half size right and increase
+                the font
+              </li>
+              <li>Start <b>recording</b> (Headset H390 Analog Mono)</li>
+              <li><b>Water</b></li>
+              <li>Turn off <b>mobile phone</b></li>
+            </ul>
+          </aside>
+        </section>
+        <section
+          data-background-image="images/harbor-icon-color.svg"
+          data-state="dim"
+          data-background-size="900px"
+        >
+          <h2>Agenda</h2>
+          <div
+            style="
+              background-color: rgba(0, 30, 112, 0.8);
+              color: #fff;
+              padding: 20px;
+            "
+          >
+            <ul>
+              <li>Project introduction, history, development</li>
+              <li>
+                Features - RBAC, replication, vulnerability scanning, security
+              </li>
+              <li>Architecture</li>
+            </ul>
+          </div>
+          <div
+            style="
+              background-color: rgba(0, 25, 167, 0.9);
+              color: #fff;
+              padding: 20px;
+            "
+          >
+            <ul>
+              <li>Helm charts operations</li>
+              <li>
+                Container images (replication, vulnerability scan, security)
+              </li>
+              <li>Project settings</li>
+            </ul>
+          </div>
+        </section>
+        <section
+          data-background-image="images/harbor-icon-color.svg"
+          data-state="dim"
+          data-background-size="900px"
+        >
+          <h1>What is Harbor?</h1>
+          <div
+            style="
+              background-color: rgba(0, 30, 112, 0.8);
+              color: #fff;
+              padding: 20px;
+            "
+          >
+            Cloud native registry able to store container images and Helm Charts
+          </div>
+        </section>
+        <section
+          data-background-image="images/harbor-icon-color.svg"
+          data-state="dim"
+          data-background-size="900px"
+        >
+          <img src="images/harbor_livecycle.png" alt="Harbor - livecycle" />
+          <small
+            ><a
+              href="https://github.com/goharbor/community/tree/master/presentations/introduction"
+              >https://github.com/goharbor/community/tree/master/presentations/introduction</a
+            ></small
+          >
+        </section>
+        <section
+          data-background-image="images/harbor-icon-color.svg"
+          data-state="dim"
+          data-background-size="900px"
+        >
+          <h2>Container registries</h2>
+          <div
+            style="
+              background-color: rgba(0, 30, 112, 0.8);
+              color: #fff;
+              padding: 20px;
+            "
+          >
+            <ul>
+              <li>Docker Hub</li>
+              <li>Quay</li>
+              <li>GitHub Package Registry</li>
+              <li>GitLab</li>
+              <li>Azure Container Registry</li>
+              <li>Google Container Registry (GCR)</li>
+              <li>Amazon Elastic Container Registry (ECR)</li>
+              <li>TreeScale</li>
+              <li>Canister</li>
+            </ul>
+          </div>
+        </section>
+        <section
+          data-background-image="images/harbor-icon-color.svg"
+          data-state="dim"
+          data-background-size="900px"
+        >
+          <h2>Self-hosted container registries</h2>
+          <div
+            style="
+              background-color: rgba(0, 30, 112, 0.8);
+              color: #fff;
+              padding: 20px;
+            "
+          >
+            <ul>
+              <li>Docker Registry</li>
+              <li>GitLab Container Registry</li>
+              <li>Harbor</li>
+              <li>Portus</li>
+              <li>JFrog Artifactory</li>
+            </ul>
+          </div>
+        </section>
+        <section
+          data-background-image="images/harbor-icon-color.svg"
+          data-state="dim"
+          data-background-size="900px"
+        >
+          <h3>Development cycle</h3>
+          <img
+            src="images/harbor_development_cycle.png"
+            alt="Harbor - development cycle"
+          />
+          <small
+            ><a
+              href="https://blogs.vmware.com/cloud/2017/12/06/deploy-enterprise-grade-kubernetes-vmware-pivotal-container-service-pks/"
+              >https://blogs.vmware.com/cloud/2017/12/06/deploy-enterprise-grade-kubernetes-vmware-pivotal-container-service-pks/</a
+            ></small
+          >
+        </section>
+        <section
+          data-background-image="images/harbor-icon-color.svg"
+          data-state="dim"
+          data-background-size="900px"
+        >
+          <h3>Project history</h3>
+          <img
+            src="images/harbor_history.png"
+            width="80%"
+            alt="Harbor - history"
+          />
+          <small
+            ><a
+              href="https://github.com/goharbor/community/tree/master/presentations/deep_dive"
+              >https://github.com/goharbor/community/tree/master/presentations/deep_dive</a
+            ></small
+          >
+          <aside class="notes">
+            <ul>
+              <li>Created by VMware in 2014</li>
+              <li>Registry for containers and Helm Charts</li>
+              <li>Focus: stores, signs and scans content</li>
+              <li>Open Source (Apache 2.0)</li>
+            </ul>
+          </aside>
+        </section>
+        <section
+          data-background-image="images/harbor-icon-color.svg"
+          data-state="dim"
+          data-background-size="900px"
+        >
+          <h2>Harbor timeline</h2>
+          <img src="images/harbor_timeline.png" alt="Harbor - timeline" />
+          <small
+            ><a
+              href="https://github.com/goharbor/community/tree/master/presentations/deep_dive"
+              >https://github.com/goharbor/community/tree/master/presentations/deep_dive</a
+            ></small
+          >
+        </section>
+        <section
+          data-background-image="images/harbor-icon-color.svg"
+          data-state="dim"
+          data-background-size="900px"
+        >
+          <img
+            src="images/harbor_contributors_maintainers.png"
+            alt="Harbor - contributors and maintainers"
+          />
+          <small
+            ><a
+              href="https://github.com/goharbor/community/tree/master/presentations/deep_dive"
+              >https://github.com/goharbor/community/tree/master/presentations/deep_dive</a
+            ></small
+          >
+        </section>
+        <section
+          data-background-image="images/harbor-icon-color.svg"
+          data-state="dim"
+          data-background-size="900px"
+        >
+          <h2>Harbor Features</h2>
+          <img
+            src="images/harbor_key_features.png"
+            alt="Harbor - key features"
+          />
+          <small
+            ><a
+              href="https://github.com/goharbor/community/tree/master/presentations/deep_dive"
+              >https://github.com/goharbor/community/tree/master/presentations/deep_dive</a
+            ></small
+          >
+        </section>
+        <section
+          data-background-image="images/harbor-icon-color.svg"
+          data-state="dim"
+          data-background-size="900px"
+        >
+          <h2>Access Control</h2>
+          <img
+            src="images/harbor_access_control.png"
+            alt="Harbor - access control"
+          />
+          <small
+            ><a
+              href="https://github.com/goharbor/community/tree/master/presentations/deep_dive"
+              >https://github.com/goharbor/community/tree/master/presentations/deep_dive</a
+            ></small
+          >
+          <aside class="notes">
+            <ul>
+              <li>
+                Organizations often keep images within their own organizations
+                <ul>
+                  <li>Intellectual property stays in organization</li>
+                </ul>
+              </li>
+              <li>
+                People with different roles should have different access
+                <ul>
+                  <li>Developer - Read/Write</li>
+                  <li>QA / QE - Read Only</li>
+                </ul>
+              </li>
+              <li>
+                Different rules should be enforced in different environments
+                <ul>
+                  <li>Dev/Test Environment - many people can access</li>
+                  <li>Production - a limited number of people can access</li>
+                </ul>
+              </li>
+              <li>
+                Can be integrated with internal user management system
+                <ul>
+                  <li>OIDC (OpenID Connect) support</li>
+                  <li>LDAP/Active Directory</li>
+                </ul>
+              </li>
+            </ul>
+          </aside>
+        </section>
+        <section
+          data-background-image="images/harbor-icon-color.svg"
+          data-state="dim"
+          data-background-size="900px"
+        >
+          <h2>Replication</h2>
+          <img src="images/harbor_replication.png" alt="Harbor - replication" />
+          <small
+            ><a
+              href="https://github.com/goharbor/community/tree/master/presentations/deep_dive"
+              >https://github.com/goharbor/community/tree/master/presentations/deep_dive</a
+            ></small
+          >
+        </section>
+        <section
+          data-background-image="images/harbor-icon-color.svg"
+          data-state="dim"
+          data-background-size="900px"
+        >
+          <h2>Horizontal Scaling</h2>
+          <img
+            src="images/harbor_horizontal_scaling.png"
+            width="75%"
+            alt="Harbor - horizontal scaling"
+          />
+          <small
+            ><a
+              href="https://github.com/goharbor/community/tree/master/presentations/deep_dive"
+              >https://github.com/goharbor/community/tree/master/presentations/deep_dive</a
+            ></small
+          >
+          <aside class="notes">
+            <ul>
+              <li>Container images are usually distributed from a registry</li>
+              <li>
+                Registry becomes the bottleneck for a large cluster of nodes
+                <ul>
+                  <li>I/O</li>
+                  <li>Network</li>
+                  <li>Network</li>
+                </ul>
+              </li>
+              <li>
+                Scaling out an registry server
+                <ul>
+                  <li>
+                    Multiple instances of registry sharing same storage (such as
+                    S3 or local Ceph cluster)
+                  </li>
+                  <li>
+                    Multiple instances of independent registry sharing no
+                    storage
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </aside>
+        </section>
+        <section
+          data-background-image="images/harbor-icon-color.svg"
+          data-state="dim"
+          data-background-size="900px"
+        >
+          <h2>Global Replication</h2>
+          <img
+            src="images/harbor_global_replication.png"
+            alt="Harbor - global replication"
+          />
+          <small
+            ><a
+              href="https://github.com/goharbor/community/tree/master/presentations/deep_dive"
+              >https://github.com/goharbor/community/tree/master/presentations/deep_dive</a
+            ></small
+          >
+        </section>
+        <section
+          data-background-image="images/harbor-icon-color.svg"
+          data-state="dim"
+          data-background-size="900px"
+        >
+          <h2>Vulnerability Scanning</h2>
+          <img
+            src="images/harbor_vulnerability_scanning.png"
+            alt="Harbor - vulnerability scanning"
+          />
+          <small
+            ><a
+              href="https://github.com/goharbor/community/tree/master/presentations/deep_dive"
+              >https://github.com/goharbor/community/tree/master/presentations/deep_dive</a
+            ></small
+          >
+        </section>
+        <section
+          data-background-image="images/harbor-icon-color.svg"
+          data-state="dim"
+          data-background-size="900px"
+        >
+          <h2>Image signing</h2>
+          <img
+            src="images/harbor_image_signing.png"
+            width="80%"
+            alt="Harbor - image signing"
+          />
+          <small
+            ><a
+              href="https://github.com/goharbor/community/tree/master/presentations/deep_dive"
+              >https://github.com/goharbor/community/tree/master/presentations/deep_dive</a
+            ></small
+          >
+        </section>
+        <section
+          data-background-image="images/harbor-icon-color.svg"
+          data-state="dim"
+          data-background-size="900px"
+        >
+          <h2>Harbor architecture</h2>
+          <img src="images/harbor_architecture.png" alt="Harbor architecture" />
+          <small
+            ><a
+              href="https://github.com/goharbor/community/tree/master/presentations/deep_dive"
+              >https://github.com/goharbor/community/tree/master/presentations/deep_dive</a
+            ></small
+          >
+        </section>
+        <section
+          data-background-image="images/harbor-icon-color.svg"
+          data-state="dim"
+          data-background-size="900px"
+        >
+          <h3>Harbor Helm Chart k8s installation</h3>
+          <img
+            src="images/harbor_helm_chart_k8s_installation.png"
+            width="80%"
+            alt="Harbor - helm chart k8s installation"
+          />
+          <small
+            ><a
+              href="https://github.com/goharbor/community/tree/master/presentations/deep_dive"
+              >https://github.com/goharbor/community/tree/master/presentations/deep_dive</a
+            ></small
+          >
+        </section>
+        <section
+          data-background-image="images/harbor-icon-color.svg"
+          data-state="dim"
+          data-background-size="900px"
+        >
+          <h1>Demo</h1>
+          <div
+            style="
+              background-color: rgba(0, 30, 112, 0.8);
+              color: #fff;
+              padding: 20px;
+              font-size: 90%;
+            "
+          >
+            <ul>
+              <li>
+                Presentation git repository:<br />
+                <a href="https://github.com/ruzickap/k8s-harbor-presentation"
+                  >https://github.com/ruzickap/k8s-harbor-presentation</a
+                >
+              </li>
+              <li>
+                Presentation URL:<br />
+                <a href="https://ruzickap.github.io/k8s-harbor-presentation"
+                  >https://ruzickap.github.io/k8s-harbor-presentation</a
+                >
+              </li>
+              <li>
+                Demo Git repository:<br />
+                <a href="https://github.com/ruzickap/k8s-harbor"
+                  >https://github.com/ruzickap/k8s-harbor</a
+                >
+              </li>
+              <li>
+                Demo web pages:<br />
+                <a href="https://ruzickap.github.io/k8s-harbor/"
+                  >https://ruzickap.github.io/k8s-harbor</a
+                >
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section
+          data-background-image="images/harbor-icon-color.svg"
+          data-state="dim"
+          data-background-size="900px"
+        >
+          <h3>Demo Architecture</h3>
+          <div
+            style="
+              background-color: rgba(98, 114, 255, 0.8);
+              color: #fff;
+              padding: 20px;
+            "
+          >
+            <img
+              src="images/harbor_demo_architecture_diagram.svg"
+              width="90%"
+              alt="Harbor - demo architecture diagram"
+            />
+          </div>
+        </section>
+        <!-- <section data-background-image="images/harbor-icon-color.svg" data-state="dim" data-background-size="900px">
                     <h2>Future plans for Harbor 1.9 (September)</h2>
                     <div style="background-color: rgba(0, 30, 112, 0.8); color: #fff; padding: 20px;">
                         <ul>
@@ -330,51 +572,62 @@
                         </ul>
                     </div>
                 </section> -->
-                <section data-background-image="images/harbor.gif" data-state="dimbg" data-background-size="1200px">
-                    <h1>Thank you</h1>
-                    <div style="font-size:60%">
-                        <ul>
-                            <li>
-                                Presentation URL:<br/>
-                                <a href="https://ruzickap.github.io/k8s-harbor-presentation">https://ruzickap.github.io/k8s-harbor-presentation</a>
-                            </li>
-                            <li>
-                                Demo web pages:<br/>
-                                <a href="https://ruzickap.github.io/k8s-harbor/">https://ruzickap.github.io/k8s-harbor</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <aside class="notes">
-                        <ul>
-                            <li><b>OIDC</b> (OpenID Connect) support</li>
-                            <li><b>Robot</b> account for system integration (CI/CD)</li>
-                            <li><b>Swagger</b> UI for exploring and triggering Harbor API</li>
-                            <li><b>Cron</b>-based scheduling tasks: scan, garbage, collection and replication</li>
-                            <li><b>Logs</b></li>
-                        </ul>
-                    </aside>
-                </section>
-            </div>
-        </div>
+        <section
+          data-background-image="images/harbor.gif"
+          data-state="dimbg"
+          data-background-size="1200px"
+        >
+          <h1>Thank you</h1>
+          <div style="font-size: 60%">
+            <ul>
+              <li>
+                Presentation URL:<br />
+                <a href="https://ruzickap.github.io/k8s-harbor-presentation"
+                  >https://ruzickap.github.io/k8s-harbor-presentation</a
+                >
+              </li>
+              <li>
+                Demo web pages:<br />
+                <a href="https://ruzickap.github.io/k8s-harbor/"
+                  >https://ruzickap.github.io/k8s-harbor</a
+                >
+              </li>
+            </ul>
+          </div>
+          <aside class="notes">
+            <ul>
+              <li><b>OIDC</b> (OpenID Connect) support</li>
+              <li><b>Robot</b> account for system integration (CI/CD)</li>
+              <li><b>Swagger</b> UI for exploring and triggering Harbor API</li>
+              <li>
+                <b>Cron</b>-based scheduling tasks: scan, garbage, collection
+                and replication
+              </li>
+              <li><b>Logs</b></li>
+            </ul>
+          </aside>
+        </section>
+      </div>
+    </div>
 
-        <script src="revealjs/js/reveal.js"></script>
+    <script src="revealjs/js/reveal.js"></script>
 
-        <script>
-            // More info https://github.com/hakimel/reveal.js#configuration
-            Reveal.initialize({
-                hash: true,
-                width: 1100,
+    <script>
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        hash: true,
+        width: 1100,
 
-                // More info https://github.com/hakimel/reveal.js#dependencies
-                dependencies: [
-                    { src: 'revealjs/plugin/search/search.js', async: true },
-                    { src: 'revealjs/plugin/zoom-js/zoom.js', async: true },
-                    { src: 'revealjs/plugin/notes/notes.js', async: true }
-                ]
-            });
-            Reveal.configure({
-                slideNumber: 'c/t'
-            });
-        </script>
-    </body>
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+          { src: "revealjs/plugin/search/search.js", async: true },
+          { src: "revealjs/plugin/zoom-js/zoom.js", async: true },
+          { src: "revealjs/plugin/notes/notes.js", async: true },
+        ],
+      });
+      Reveal.configure({
+        slideNumber: "c/t",
+      });
+    </script>
+  </body>
 </html>
