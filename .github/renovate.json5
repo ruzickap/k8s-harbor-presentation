@@ -10,9 +10,6 @@
     ":disableRateLimiting",
     ":enableVulnerabilityAlertsWithLabel(security)",
   ],
-  "git-submodules": {
-    enabled: true,
-  },
   labels: [
     "renovate",
     "renovate/{{replace '.*/' '' depName}}",
