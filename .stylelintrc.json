@@ -1,0 +1,8 @@
+{
+  "rules": {
+    "alpha-value-notation": null,
+    "color-function-notation": null,
+    "property-no-vendor-prefix": null,
+    "value-no-vendor-prefix": null
+  }
+}
