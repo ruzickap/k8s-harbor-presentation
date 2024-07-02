@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.1.0](https://github.com/ruzickap/k8s-harbor-presentation/compare/v1.0.3...v1.1.0) (2024-07-02)
+
+
+### Features
+
+* **gh:** add default GitHub repo files ([#31](https://github.com/ruzickap/k8s-harbor-presentation/issues/31)) ([5734a58](https://github.com/ruzickap/k8s-harbor-presentation/commit/5734a589b62eb73377a4d98f41cca8f3f3e72073))
+* **gha:** remove/fix non-working github actions ([#32](https://github.com/ruzickap/k8s-harbor-presentation/issues/32)) ([60bc1fa](https://github.com/ruzickap/k8s-harbor-presentation/commit/60bc1fab63bef39bfd14787cb102d9696dc702d2))
+* **gha:** unify GHA - renovate, megalinter, markdown, and others ([#28](https://github.com/ruzickap/k8s-harbor-presentation/issues/28)) ([0608421](https://github.com/ruzickap/k8s-harbor-presentation/commit/0608421b6f5b89a8a9198042bc6e2859e459da92))
+
+
+### Bug Fixes
+
+* **renovate:** disable autoupdate for git-submodules ([#30](https://github.com/ruzickap/k8s-harbor-presentation/issues/30)) ([ae2c6cc](https://github.com/ruzickap/k8s-harbor-presentation/commit/ae2c6ccc466282d008a9cd02e7fa32a4568e31ee))
+
 ## [v1.0.3](https://github.com/ruzickap/k8s-harbor-presentation/compare/v1.0.2...v1.0.3) (2021-12-20)
 
 - Improve GH Action files [`#25`](https://github.com/ruzickap/k8s-harbor-presentation/pull/25)
